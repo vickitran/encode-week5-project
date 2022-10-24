@@ -1,0 +1,92 @@
+<div class="container px-4 py-5" id="featured-3">
+    <button type="button" 
+        routerLink="/" 
+        class="btn btn-primary btn-sm px-4 gap-3"
+        >
+        Back
+    </button>
+    <h2 class="pb-2 border-bottom">Dashboard</h2>
+    <div class="row">
+        <p> Welcome to the Bet game! </p>
+        <p> Choose a button to open the bet! </p>
+
+
+        <p> Input duration (in seconds) of the bet: </p>
+        <form [formGroup]="openBetsForm">
+           <input type="text" placeholder="duration here" formControlName="duration">
+        </form>
+        <button 
+            type="button"
+            class="btn btn-primary btn-lg px-4 gap-3" 
+            (click)="openBetsApp()"> Open bets
+        </button>
+
+        <p> How many tokens to top up? </p>
+        <form [formGroup]="amountForm">
+           <input type="text" placeholder="Amount of tokens" formControlName="amount">
+        </form>
+        <button 
+            type="button"
+            class="btn btn-primary btn-lg px-4 gap-3" 
+            (click)="displayBalanceApp(); buyTokensApp(); displayBalanceApp(); displayTokenBalanceApp()"> Buy tokens
+        </button>
+
+        <p> How many times do you want to bet? </p>
+        <form [formGroup]="amountForm">
+           <input type="text" placeholder="Amount" formControlName="amount">
+        </form>
+        <button 
+            type="button"
+            class="btn btn-primary btn-lg px-4 gap-3" 
+            (click)="betApp(); displayTokenBalanceApp() "> Bet with your account
+        </button>
+
+        <button 
+            type="button"
+            class="btn btn-primary btn-lg px-4 gap-3" 
+            (click)="closeLotteryApp()"> Close the bets
+        </button>
+
+        <button 
+            type="button"
+            class="btn btn-primary btn-lg px-4 gap-3" 
+            (click)="displayTokenBalanceApp()"> Display token balance
+        </button>
+
+        <button 
+            type="button"
+            class="btn btn-primary btn-lg px-4 gap-3" 
+            (click)="displayBalanceApp()"> Display lottery balance
+        </button>
+
+        <p> Input amount of prize to claim: </p>
+        <form [formGroup]="amountForm">
+           <input type="text" placeholder="Prize amount" formControlName="amount">
+        </form>
+        <button 
+            type="button"
+            class="btn btn-primary btn-lg px-4 gap-3" 
+            (click)="displayPrizeApp(); claimPrizeApp()"> Check player prize
+        </button>
+
+        <p> Input amount of prize to withdraw: </p>
+        <form [formGroup]="amountForm">
+           <input type="text" placeholder="Prize amount" formControlName="amount">
+        </form>
+        <button 
+            type="button"
+            class="btn btn-primary btn-lg px-4 gap-3" 
+            (click)="displayTokenBalanceApp(); displayownerPoolApp(); withdrawTokensApp()"> Withdraw
+        </button>
+
+        <p> Input amount of token to convert in ETH: </p>
+        <form [formGroup]="amountForm">
+           <input type="text" placeholder="Token amount" formControlName="amount">
+        </form>
+        <button 
+            type="button"
+            class="btn btn-primary btn-lg px-4 gap-3" 
+            (click)="displayTokenBalanceApp(); burnTokens()"> Burn tokens and get ETH
+        </button>
+    </div>
+</div>

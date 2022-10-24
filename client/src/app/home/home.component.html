@@ -5,18 +5,48 @@
 </div>
 <div class="mb-3">
   <h2>{{ buttonMsg }}</h2>
-  <div class="card w-10" style="width: 12rem">
-    <img class="card-img-top" src="{{ lotteryImg }}" />
-    <div class="card-body">
-      <h5 class="card-title">The Lottery is:</h5>
-      <p class="card-text">{{ lotteryState }}</p>
-      <button
-        [disabled]="checkConnected()"
-        class="btn btn-primary"
-        (click)="checkState()"
-      >
-        Check if Lottery is Open
-      </button>
+  <div class="card-group">
+    <div class="card">
+      <img class="card-img-top" src="{{ lotteryImg }}" />
+      <div class="card-body">
+        <h5 class="card-title">The Lottery is:</h5>
+        <p class="card-text">{{ lotteryState }}</p>
+        <button
+          [disabled]="checkConnected()"
+          class="btn btn-primary"
+          (click)="checkState()"
+        >
+          Check if Lottery is Open
+        </button>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="{{ displayBalanceImg }}" />
+      <div class="card-body">
+        <h5 class="card-title">Ether Balance is:</h5>
+        <p class="card-text">{{ displayBalanceState }}</p>
+        <button
+          [disabled]="checkConnected()"
+          class="btn btn-primary"
+          (click)="displayBalance()"
+        >
+          Display Balance
+        </button>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="{{ TokenBalanceImg }}" />
+      <div class="card-body">
+        <h5 class="card-title">Token Balance is:</h5>
+        <p class="card-text">{{ TokenBalanceState }}</p>
+        <button
+          [disabled]="checkConnected()"
+          class="btn btn-primary"
+          (click)="displayTokenBalance()"
+        >
+          Display Token Balance
+        </button>
+      </div>
     </div>
   </div>
 </div>
